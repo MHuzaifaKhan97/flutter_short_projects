@@ -1,2 +1,2 @@
 # Flutter Short Projects: 
-## - Parallax Effect UI.
+## - Parallax Effect UI. 
