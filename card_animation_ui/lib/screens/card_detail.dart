@@ -265,6 +265,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                       "108,000",
                                       "Credit",
                                     ),
+                                    _seperator(),
                                     _transactionItem(
                                       Icons.local_grocery_store,
                                       "Groceries",
@@ -288,6 +289,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                       "108,000",
                                       "Credit",
                                     ),
+                                    _seperator(),
                                     _transactionItem(
                                       Icons.local_grocery_store,
                                       "Groceries",
