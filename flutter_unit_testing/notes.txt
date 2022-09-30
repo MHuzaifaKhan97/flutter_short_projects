@@ -1,0 +1,18 @@
+What is testing?
+ - Ensuring our app does exactly what it should.
+ - Testing for regressions
+ - Two types:
+    - manual testing.
+    - Automated test.
+
+Tests in flutter:
+- Unit Test.
+ - For all code beside the UI widget.
+ - One set of unit tests usually tests a single class.
+
+- Widget Test.
+ - For testing a single widget.
+
+- Integration Test.
+ - For testing large part of the app from the user perspective.
+
