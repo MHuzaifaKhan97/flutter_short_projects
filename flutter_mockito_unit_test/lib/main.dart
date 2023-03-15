@@ -4,37 +4,46 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-Future<Album> fetchAlbum(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+class AlbumDataSource {
+  final http.Client client;
 
-  if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
-  } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
-    throw Exception('Failed to load album');
-  }
-}
+  AlbumDataSource(this.client);
+  // Future<Album> fetchAlbum(http.Client client) async {
+  //   final response = await client
+  //       .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
-Future<Album> addAlbum(http.Client client) async {
-  final response = await client
-      .post(Uri.parse('https://jsonplaceholder.typicode.com/albums/'), body: {
-    "title": 'foo',
-    "body": 'Winneh',
-    "userId": 1,
-  });
+  //   if (response.statusCode == 200) {
+  //     // If the server did return a 200 OK response,
+  //     // then parse the JSON.
+  //     return Album.fromJson(jsonDecode(response.body));
+  //   } else {
+  //     // If the server did not return a 200 OK response,
+  //     // then throw an exception.
+  //     throw Exception('Failed to load album');
+  //   }
+  // }
 
-  if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
-  } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
-    throw Exception('Failed to load album');
+  Future<Album> addAlbum() async {
+    var body = json.decode('{ "title": "foo","body": "Winneh","userId": 1}');
+    var url = "https://jsonplaceholder.typicode.com/albums";
+    var encodeBody = json.encode(body);
+    final response = await client.post(
+      Uri.parse(url),
+      body: encodeBody,
+      headers: {
+        "content-type": "application/json",
+      },
+    );
+
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      return Album.fromJson(jsonDecode(response.body));
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load album');
+    }
   }
 }
 
@@ -69,7 +78,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    futureAlbum = fetchAlbum(http.Client());
+    // futureAlbum = fetchAlbum(http.Client());
   }
 
   @override
