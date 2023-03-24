@@ -11,10 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const HomeScreen());
+        title: 'Reaction Tray',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primaryColor: Colors.blue),
+        home: HomeScreen());
   }
 }
