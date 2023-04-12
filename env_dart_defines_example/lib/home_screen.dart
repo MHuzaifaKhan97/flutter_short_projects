@@ -91,3 +91,4 @@ class _HomeScreenState extends State<HomeScreen> {
 //   --dart-define MY_API_KEY=a1b2c33d4e5f6g7h8i9jakblc \
 //   --dart-define STRIPE_KEY=pk_test_aposdjpa309u2n230ibt23908g \
 //   --dart-define MY_API_URL=https://google.com.pk
+// add launch.json file in .gitignore as well
