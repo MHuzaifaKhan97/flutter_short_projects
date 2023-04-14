@@ -1,13 +1,6 @@
-import 'package:envied/envied.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-part 'env.g.dart';
-
-@Envied(path: 'keys.env')
 abstract class Env {
-  @EnviedField(varName: 'API_KEY')
-  static const apiKEY = _Env.apiKEY;
-  @EnviedField(varName: 'STRIPE_KEY', obfuscate: true)
-  static final stripeKey = _Env.stripeKey;
-  @EnviedField(defaultValue: 'test_')
-  static const key3 = _Env.key3;
+  static final API_KEY = dotenv.env['API_KEY'];
+  static final STRIPE_KEY = dotenv.env['STRIPE_KEY'];
 }

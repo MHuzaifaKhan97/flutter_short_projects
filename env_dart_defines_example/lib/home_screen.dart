@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   const Text("API KEY"),
                   Text(
-                    apiKey,
+                    Env.API_KEY!,
                   ),
                 ],
               ),
@@ -59,43 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   const Text("STRIPE KEY"),
                   Text(
-                    stripeKey,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Api URL"),
-                  Text(
-                    apiURL,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Api KEY from Env"),
-                  Text(
-                    Env.apiKEY,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("STRIPE Env"),
-                  Text(
-                    Env.stripeKey,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Default key"),
-                  Text(
-                    Env.key3,
+                    Env.STRIPE_KEY!,
                   ),
                 ],
               ),
